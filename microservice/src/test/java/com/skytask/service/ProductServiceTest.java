@@ -5,15 +5,12 @@ import com.skytask.repository.ProductRepository;
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.internal.runners.JUnit4ClassRunner;
 import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Collections;
-import java.util.List;
 
-import static org.junit.Assert.*;
-
-@RunWith(JUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 public class ProductServiceTest {
 
 

@@ -11,5 +11,5 @@ spring:
   rabbitmq:
     host: localhost
     port: 3131
-    username: guest
-    password: guest
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASSWORD}

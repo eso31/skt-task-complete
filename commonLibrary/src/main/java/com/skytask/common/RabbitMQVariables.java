@@ -1,64 +1,23 @@
 package com.skytask.common;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-@Configuration
+import java.util.Map;
+
+@Component
 @ConfigurationProperties("rabbitmq.config")
 public class RabbitMQVariables {
-    public static class Queues {
-        private String productList;
-        private String createProduct;
-
-        public String getProductList() {
-            return productList;
-        }
-
-        public void setProductList(String productList) {
-            this.productList = productList;
-        }
-
-        public String getCreateProduct() {
-            return createProduct;
-        }
-
-        public void setCreateProduct(String createProduct) {
-            this.createProduct = createProduct;
-        }
-    }
-
-    public static class RoutingKeys {
-        private String productList;
-        private String createProduct;
-
-        public String getProductList() {
-            return productList;
-        }
-
-        public void setProductList(String productList) {
-            this.productList = productList;
-        }
-
-        public String getCreateProduct() {
-            return createProduct;
-        }
-
-        public void setCreateProduct(String createProduct) {
-            this.createProduct = createProduct;
-        }
-    }
-
-
-    private Queues queues;
+    private Map<String, String> queues;
     private String exchange;
-    private RoutingKeys routingKeys;
+    private Map<String, String> routingKeys;
 
 
-    public Queues getQueues() {
+    public Map<String, String> getQueues() {
         return queues;
     }
 
-    public void setQueues(Queues queues) {
+    public void setQueues(Map<String, String> queues) {
         this.queues = queues;
     }
 
@@ -70,11 +29,11 @@ public class RabbitMQVariables {
         this.exchange = exchange;
     }
 
-    public RoutingKeys getRoutingKeys() {
+    public Map<String, String> getRoutingKeys() {
         return routingKeys;
     }
 
-    public void setRoutingKeys(RoutingKeys routingKeys) {
+    public void setRoutingKeys(Map<String, String> routingKeys) {
         this.routingKeys = routingKeys;
     }
 }

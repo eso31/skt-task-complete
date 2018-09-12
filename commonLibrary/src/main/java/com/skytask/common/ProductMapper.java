@@ -12,11 +12,11 @@ public class ProductMapper {
     private final static ObjectMapper mapper = new ObjectMapper();
 
     public static <K> List<K> json2List(String json, Class<K> myType) throws IOException {
-        if(json==null)
+        if (json == null)
             return Collections.emptyList();
         CollectionType type = mapper.getTypeFactory().constructCollectionType(List.class, myType);
         List<String> productList = mapper.readValue(json, type);
-        return  (List<K>) productList;
+        return (List<K>) productList;
     }
 
     public static <K> String list2Json(List<K> list) throws IOException {
